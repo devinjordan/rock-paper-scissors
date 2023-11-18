@@ -31,6 +31,7 @@ function game() {
   let computerScore;
 
   for (i = 0; i <5; i++) {
+    // RESTRICT OTHER OPTIONS
     let playerSelection = prompt("Make a choice: ");
     playerSelection = playerSelection.toLowerCase();
     const computerSelection = getComputerChoice();
@@ -44,6 +45,7 @@ function game() {
       computerScore++;
     }
 
+    // THIS DOESN'T SEEM TO BE WORKING PROPERLY
     if (playerScore === 3) {
       console.log("You've won the game!");
     } else if (computerScore === 3) {
