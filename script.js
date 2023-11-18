@@ -31,9 +31,18 @@ function game() {
   let computerScore = 0;
 
   for (i = 0; i <5; i++) {
-    // RESTRICT OTHER OPTIONS
-    let playerSelection = prompt("Make a choice: ");
-    playerSelection = playerSelection.toLowerCase();
+    let playerSelection;
+    do {
+      playerSelection = prompt("Make a choice: ");
+      playerSelection = playerSelection.toLowerCase();
+      if (playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors') {
+        break;
+      } else {
+        console.log("Please enter a valid object...");
+      }
+  
+    } while (true);
+
     const computerSelection = getComputerChoice();
     const result = playRound(playerSelection, computerSelection);
     if (result === 'Tie game!') {
@@ -45,7 +54,6 @@ function game() {
       computerScore++;
     }
 
-    // THIS DOESN'T SEEM TO BE WORKING PROPERLY
     if (playerScore === 3) {
       console.log("You've won the game!");
       break;
