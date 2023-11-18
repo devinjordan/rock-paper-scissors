@@ -27,8 +27,8 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-  let playerScore;
-  let computerScore;
+  let playerScore = 0;
+  let computerScore = 0;
 
   for (i = 0; i <5; i++) {
     // RESTRICT OTHER OPTIONS
@@ -48,8 +48,10 @@ function game() {
     // THIS DOESN'T SEEM TO BE WORKING PROPERLY
     if (playerScore === 3) {
       console.log("You've won the game!");
+      break;
     } else if (computerScore === 3) {
-      console.log('Game over! The computer has won.')
+      console.log('Game over! The computer has won.');
+      break;
     }
   }
 }
