@@ -6,7 +6,7 @@ function getComputerChoice() {
   } else if (random > 0.333 && random < 0.667) {
     computerSelection = 'paper';
   } else {
-    computerSelection = 'rock';
+    computerSelection = 'scissors';
   }
   return computerSelection;
 }
@@ -15,7 +15,9 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     console.log('Tie game!');
     return('Tie game!');
-  } else if (playerSelection == 'rock' && computerSelection == 'paper' || playerSelection == 'paper' && computerSelection == 'scissors' || playerSelection == 'scissors' && computerSelection == 'rock') {
+  } else if (playerSelection == 'rock' && computerSelection == 'paper' || 
+  playerSelection == 'paper' && computerSelection == 'scissors' || 
+  playerSelection == 'scissors' && computerSelection == 'rock') {
     console.log(`You lose the round! ${computerSelection} beats ${playerSelection}`);
     return false;
   } else {
@@ -49,3 +51,5 @@ function game() {
     }
   }
 }
+
+game();
