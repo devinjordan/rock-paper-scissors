@@ -13,4 +13,4 @@ Played in the console, this is the first JavaScript project in the Odin Project.
 - Functions
 - Methods
 
-### Created by Devin Spoelstra
+Created by devinjordan
