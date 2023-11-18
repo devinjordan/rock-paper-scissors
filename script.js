@@ -40,7 +40,6 @@ function game() {
       } else {
         console.log("Please enter a valid object...");
       }
-  
     } while (true);
 
     const computerSelection = getComputerChoice();
@@ -54,6 +53,7 @@ function game() {
       computerScore++;
     }
 
+    // Win/Loss conditions
     if (playerScore === 3) {
       console.log("You've won the game!");
       break;
