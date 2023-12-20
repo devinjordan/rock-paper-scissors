@@ -30,7 +30,7 @@ function game() {
   let playerScore = 0;
   let computerScore = 0;
 
-  for (i = 0; i <5; i++) {
+  // for (i = 0; i <5; i++) {
     let playerSelection;
     do {
       playerSelection = prompt("Make a choice: ");
@@ -44,24 +44,24 @@ function game() {
 
     const computerSelection = getComputerChoice();
     const result = playRound(playerSelection, computerSelection);
-    if (result === 'Tie game!') {
-      i--;
-      continue;
-    } else if (result) {
-      playerScore++;
-    } else {
-      computerScore++;
-    }
+    // if (result === 'Tie game!') {
+    //   i--;
+    //   continue;
+    // } else if (result) {
+    //   playerScore++;
+    // } else {
+    //   computerScore++;
+    // }
 
-    // Win/Loss conditions
-    if (playerScore === 3) {
-      console.log("You've won the game!");
-      break;
-    } else if (computerScore === 3) {
-      console.log('Game over! The computer has won.');
-      break;
-    }
-  }
+    // // Win/Loss conditions
+    // if (playerScore === 3) {
+    //   console.log("You've won the game!");
+    //   break;
+    // } else if (computerScore === 3) {
+    //   console.log('Game over! The computer has won.');
+    //   break;
+    // }
+  // }
 }
 
 game();
