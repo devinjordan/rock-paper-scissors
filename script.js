@@ -18,17 +18,21 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    informTie = document.createElement('p');
-    informTie.textContent
-    ('Tie game!');
+    const informTie = document.createElement('p');
+    informTie.textContent = "Tie game!";
+    resultsArea.appendChild(informTie);
     return('Tie game!');
   } else if (playerSelection == 'rock' && computerSelection == 'paper' || 
   playerSelection == 'paper' && computerSelection == 'scissors' || 
   playerSelection == 'scissors' && computerSelection == 'rock') {
-    console.log(`You lose the round! ${computerSelection} beats ${playerSelection}`);
+    const informLoss = document.createElement('p');
+    informLoss.textContent = `You lose the round! ${computerSelection} beats ${playerSelection}`;
+    resultsArea.appendChild(informLoss);
     return false;
   } else {
-    console.log(`You win the round! ${playerSelection} beats ${computerSelection}`);
+    const informWin = document.createElement('p');
+    informWin.textContent = `You win the round! ${playerSelection} beats ${computerSelection}`;
+    resultsArea.appendChild(informWin);
     return true;
   }
 }
