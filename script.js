@@ -3,6 +3,9 @@ const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
 
+let computerScore = 0;
+let playerScore = 0;
+
 function getComputerChoice() {
   random = Math.random();
   let computerSelection;
@@ -21,19 +24,34 @@ function playRound(playerSelection, computerSelection) {
     const informTie = document.createElement('p');
     informTie.textContent = "Tie game!";
     resultsArea.appendChild(informTie);
-    return('Tie game!');
+
   } else if (playerSelection == 'rock' && computerSelection == 'paper' || 
   playerSelection == 'paper' && computerSelection == 'scissors' || 
   playerSelection == 'scissors' && computerSelection == 'rock') {
     const informLoss = document.createElement('p');
     informLoss.textContent = `You lose the round! ${computerSelection} beats ${playerSelection}`;
     resultsArea.appendChild(informLoss);
-    return false;
+    computerScore++;
+
   } else {
     const informWin = document.createElement('p');
     informWin.textContent = `You win the round! ${playerSelection} beats ${computerSelection}`;
     resultsArea.appendChild(informWin);
-    return true;
+    playerScore++;
+  }
+
+  if (playerScore === 5) {
+    const informWonGame = document.createElement('p');
+    informWonGame.textContent = "You've won the game!";
+    informWonGame.style.color = 'green';
+    resultsArea.appendChild(informWonGame);
+  }
+
+  if (computerScore === 5) {
+    const informGameOver = document.createElement('p');
+    informGameOver.textContent = "Game over! Better luck next time..."
+    informGameOver.style.color = 'red';
+    resultsArea.appendChild(informGameOver);
   }
 }
 
