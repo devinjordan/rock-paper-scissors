@@ -18,7 +18,9 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    console.log('Tie game!');
+    informTie = document.createElement('p');
+    informTie.textContent
+    ('Tie game!');
     return('Tie game!');
   } else if (playerSelection == 'rock' && computerSelection == 'paper' || 
   playerSelection == 'paper' && computerSelection == 'scissors' || 
@@ -29,4 +31,14 @@ function playRound(playerSelection, computerSelection) {
     console.log(`You win the round! ${playerSelection} beats ${computerSelection}`);
     return true;
   }
+}
+
+rock.onclick = function () {
+  playRound('rock', getComputerChoice());
+}
+paper.onclick = function () {
+  playRound('paper', getComputerChoice());
+}
+scissors.onclick = function () {
+  playRound('scissors', getComputerChoice());
 }
