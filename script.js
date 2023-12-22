@@ -23,6 +23,7 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     const informTie = document.createElement('p');
     informTie.textContent = "Tie game!";
+    informTie.style.color = 'white';
     resultsArea.appendChild(informTie);
 
   } else if (playerSelection == 'rock' && computerSelection == 'paper' || 
@@ -36,6 +37,7 @@ function playRound(playerSelection, computerSelection) {
   } else {
     const informWin = document.createElement('p');
     informWin.textContent = `You win the round! ${playerSelection} beats ${computerSelection}`;
+    informWin.style.color = 'lightgreen';
     resultsArea.appendChild(informWin);
     playerScore++;
   }
