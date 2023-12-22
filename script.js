@@ -41,17 +41,19 @@ function playRound(playerSelection, computerSelection) {
   }
 
   if (playerScore === 5) {
-    const informWonGame = document.createElement('p');
-    informWonGame.textContent = "You've won the game!";
-    informWonGame.style.color = 'green';
-    resultsArea.appendChild(informWonGame);
+    playerScore = computerScore = 0;
+    while (resultsArea.firstChild) {
+      resultsArea.removeChild(resultsArea.firstChild);
+    }
+    alert("You've won the game!");
   }
 
   if (computerScore === 5) {
-    const informGameOver = document.createElement('p');
-    informGameOver.textContent = "Game over! Better luck next time..."
-    informGameOver.style.color = 'red';
-    resultsArea.appendChild(informGameOver);
+    playerScore = computerScore = 0;
+    while (resultsArea.firstChild) {
+      resultsArea.removeChild(resultsArea.firstChild);
+    }
+    alert("Game over! Better luck next time...");
   }
 }
 
